@@ -1,0 +1,385 @@
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand ul {
+  padding: 0px 0px 0px 10px;
+  margin-bottom: 0px;
+}
+
+button.navbar-toggler {
+  padding: 2px;
+  margin-right: 10px;
+}
+
+.logo {
+  width: 60px;
+  border-radius: 50%;
+}
+
+li {
+  list-style: none;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn1 {
+  color: blue;
+  background-color: #ffffff;
+  border: 1px solid blue;
+}
+
+.btn2 {
+  color: #ffffff;
+  background-color: blue;
+  border: 1px solid #ffffff;
+}
+.btn2:hover {
+  color: #ffffff;
+}
+
+.landing_img {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+  justify-content: space-between;
+}
+
+.top {
+  color: rgba(33, 37, 41, 0.4392156863) !important;
+  justify-content: right;
+  display: flex;
+  padding-right: 40px;
+}
+.top li {
+  list-style: none;
+  margin: 0px 5px;
+}
+.top li i {
+  font-size: 14px;
+}
+
+.header {
+  justify-content: space-between;
+  display: flex;
+  padding-right: 30px;
+  justify-content: space-between;
+}
+.header ul {
+  padding: 0px 15px;
+  margin: 0px;
+}
+.header li {
+  list-style: none;
+}
+.header .btns .btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.header .btns .btn1 {
+  color: blue;
+  background-color: #ffffff;
+  border: 1px solid blue;
+}
+.header .btns .btn2 {
+  color: #ffffff;
+  background-color: blue;
+  border: 1px solid #ffffff;
+}
+.header .btns i {
+  margin: 0px 5px 0px 0px;
+}
+
+input, textarea, select {
+  margin-bottom: 15px;
+}
+
+.heading {
+  text-align: center;
+  text-transform: uppercase;
+  color: blue;
+  margin-bottom: 20px;
+}
+
+.login .pass {
+  position: relative;
+}
+.login .pass input {
+  margin-bottom: 0px;
+}
+.login .pass i {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+.login .btn {
+  width: 110px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.login .btn:hover {
+  color: #ffffff;
+}
+.login small {
+  float: right;
+}
+.login small a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.491);
+}
+.login small a:hover {
+  color: blue;
+}
+.login .signup_now {
+  float: left;
+}
+.login .signup_now a {
+  color: blue;
+}
+.login .signup_now a:hover {
+  color: rgba(0, 0, 0, 0.491);
+}
+
+.pass {
+  position: relative;
+}
+.pass i {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.register .register_btn {
+  text-align: right;
+}
+.register .btn2 {
+  text-transform: uppercase;
+  width: 100%;
+}
+
+textarea {
+  margin-bottom: 15px;
+}
+
+.form {
+  margin: 50px 0px;
+}
+
+.profile_pic {
+  border-radius: 50%;
+  width: 50px;
+}
+
+#profile {
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+}
+#profile .btn2 {
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  padding: 0px;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+  overflow: hidden;
+  background: rgba(128, 128, 128, 0.168627451);
+}
+#profile .btn2 i {
+  color: rgba(128, 128, 128, 0.6196078431);
+  font-size: 44px;
+  margin: 0px;
+}
+#profile .profile_button {
+  background-image: url("../assets/Images/icon-select.png");
+  background-repeat: no-repeat, repeat;
+  background-position: right;
+  background-size: 10px;
+  padding: 0px 5px 0px 10px;
+  color: #58595c;
+  font-size: 10px;
+}
+
+.profile_dropdown {
+  background: white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  width: 200px;
+  position: absolute;
+  right: 10px;
+  z-index: 9999;
+  top: 80px;
+  border-radius: 10px;
+}
+.profile_dropdown .view_profile {
+  border: 1px solid blue;
+  text-align: center;
+  margin: 10px 20px;
+  border-radius: 20px;
+  padding: 2px;
+}
+.profile_dropdown .view_profile .btn {
+  padding: 0px !important;
+  color: blue;
+}
+.profile_dropdown .view_profile .btn:hover {
+  text-decoration: underline;
+}
+.profile_dropdown .logout {
+  border-top: 1px solid rgba(0, 0, 0, 0.1490196078);
+}
+.profile_dropdown .logout .btn {
+  color: rgba(0, 0, 0, 0.55);
+}
+.profile_dropdown .logout .btn:hover {
+  color: blue;
+}
+
+.profile_ {
+  background-color: rgba(192, 192, 192, 0.2);
+}
+.profile_ .container-fluid {
+  width: 70%;
+  margin-left: 30px;
+  max-width: 70%;
+}
+
+.profile_section {
+  margin: 15px 0px 0px 0px;
+  padding: 0px;
+}
+.profile_section .bottom_section_coverphoto {
+  background-color: #ffffff;
+  position: relative;
+  padding: 0px 25px;
+}
+.profile_section .bottom_section_coverphoto .bottom_profile {
+  padding-top: 15px;
+}
+.profile_section .bottom_section_coverphoto .profile_pic_ {
+  height: 75px;
+}
+.profile_section .bottom_section_coverphoto .profile_pic_ img {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  top: -75px;
+}
+.profile_section .bottom_section_coverphoto .fa-edit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.profile_section .cover_photo {
+  height: 200px;
+  text-align: right;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+.profile_section .cover_photo img {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.profile_section .cover_photo .fa-camera {
+  position: absolute;
+  background: #ffffff;
+  padding: 10px;
+  right: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+small {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.post-job .post_job {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.card {
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+.contact_portion {
+  background: #fff;
+  margin: 10px 15px 10px 0px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.08);
+}
+.contact_portion ul {
+  padding: 0px;
+}
+.contact_portion ul i {
+  margin-right: 6px;
+}
+
+.Posts {
+  background: #fff;
+  margin: 10px 0px 10px 0px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.08);
+}
+.Posts .post_text {
+  padding: 10px 15px;
+}
+
+.posts_data .card p {
+  text-transform: capitalize;
+}
+.posts_data .card .card_head {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-right: 15px;
+}
+.posts_data .card .card_head .post_header {
+  margin-left: 8px;
+}
+.posts_data .card .card_head .post_header .card-title {
+  margin-bottom: 0px;
+  text-transform: capitalize;
+}
+.posts_data .card .card_head .ellipsis {
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-radius: 50%;
+}
+.posts_data .card .card_head .ellipsis:hover {
+  background-color: rgba(88, 89, 92, 0.1);
+}
+.posts_data .card .card_head small {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.posts_data .card .card-img {
+  height: auto;
+  width: 215px;
+}/*# sourceMappingURL=main.css.map */

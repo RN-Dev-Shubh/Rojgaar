@@ -1,0 +1,17 @@
+// $color: rgb(255, 128, 0);
+$color:blue;
+@mixin btn_property{
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+@mixin btn1{
+    color:  $color;
+    background-color: #ffffff;
+    border: 1px solid $color;   
+}
+@mixin bnt2{
+    color: #ffffff;
+        background-color:  $color;
+        border: 1px solid #ffffff;   
+}
