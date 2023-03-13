@@ -1,3 +1,7 @@
+body {
+  background: rgba(128, 128, 128, 0.1294117647);
+}
+
 .navbar-brand {
   padding: 0px;
 }
@@ -30,14 +34,14 @@ li {
 }
 
 .btn1 {
-  color: blue;
+  color: #579BF0;
   background-color: #ffffff;
-  border: 1px solid blue;
+  border: 1px solid #579BF0;
 }
 
 .btn2 {
   color: #ffffff;
-  background-color: blue;
+  background-color: #579BF0;
   border: 1px solid #ffffff;
 }
 .btn2:hover {
@@ -45,14 +49,15 @@ li {
 }
 
 .landing_img {
-  height: 100%;
-  width: 100%;
+  height: 200px;
+  width: 350px;
   background-repeat: no-repeat;
 }
 
 .navbar {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
   justify-content: space-between;
+  background: #ffffff;
 }
 
 .top {
@@ -88,13 +93,13 @@ li {
   border-radius: 4px;
 }
 .header .btns .btn1 {
-  color: blue;
+  color: #579BF0;
   background-color: #ffffff;
-  border: 1px solid blue;
+  border: 1px solid #579BF0;
 }
 .header .btns .btn2 {
   color: #ffffff;
-  background-color: blue;
+  background-color: #579BF0;
   border: 1px solid #ffffff;
 }
 .header .btns i {
@@ -120,11 +125,11 @@ input, textarea, select {
 }
 .login .pass i {
   position: absolute;
-  top: 10px;
+  top: 35px;
   right: 15px;
 }
 .login .btn {
-  width: 110px;
+  width: 100%;
   margin: 0px;
   margin-top: 20px;
   margin-bottom: 5px;
@@ -153,12 +158,23 @@ input, textarea, select {
   color: rgba(0, 0, 0, 0.491);
 }
 
+.signin_now {
+  float: left;
+}
+.signin_now a {
+  text-decoration: none;
+  color: blue;
+}
+.signin_now a:hover {
+  color: rgba(0, 0, 0, 0.491);
+}
+
 .pass {
   position: relative;
 }
 .pass i {
   position: absolute;
-  top: 10px;
+  top: 35px;
   right: 15px;
 }
 
@@ -175,7 +191,30 @@ textarea {
 }
 
 .form {
-  margin: 50px 0px;
+  padding: 50px;
+  padding-top: 180px;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #ffffff;
+  border-radius: 30px;
+}
+.form .landing_img {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 120px;
+  width: 220px;
+}
+.form button {
+  width: 100%;
 }
 
 .profile_pic {
@@ -226,7 +265,7 @@ textarea {
   border-radius: 10px;
 }
 .profile_dropdown .view_profile {
-  border: 1px solid blue;
+  border: 1px solid #579BF0;
   text-align: center;
   margin: 10px 20px;
   border-radius: 20px;
@@ -234,28 +273,28 @@ textarea {
 }
 .profile_dropdown .view_profile .btn {
   padding: 0px !important;
-  color: blue;
+  color: #579BF0;
 }
 .profile_dropdown .view_profile .btn:hover {
   text-decoration: underline;
 }
 .profile_dropdown .logout {
+  text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1490196078);
 }
 .profile_dropdown .logout .btn {
   color: rgba(0, 0, 0, 0.55);
 }
 .profile_dropdown .logout .btn:hover {
-  color: blue;
+  color: #579BF0;
 }
 
 .profile_ {
   background-color: rgba(192, 192, 192, 0.2);
 }
 .profile_ .container-fluid {
-  width: 70%;
-  margin-left: 30px;
-  max-width: 70%;
+  width: 90%;
+  margin: auto;
 }
 
 .profile_section {
@@ -264,6 +303,8 @@ textarea {
 }
 .profile_section .bottom_section_coverphoto {
   background-color: #ffffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   position: relative;
   padding: 0px 25px;
 }
@@ -318,22 +359,38 @@ small {
 }
 
 .card {
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
   margin: 10px 0px;
+}
+.card img.card-img-top {
+  height: 200px;
+  width: 100%;
 }
 
 .contact_portion {
   background: #fff;
-  margin: 10px 15px 10px 0px;
+  margin: 10px 0px 10px 0px;
   padding: 10px 15px;
   border-radius: 8px;
   box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.08);
 }
-.contact_portion ul {
+.contact_portion .personal_information ul {
   padding: 0px;
 }
-.contact_portion ul i {
+.contact_portion .personal_information ul i {
   margin-right: 6px;
+  font-size: 12px;
+}
+.contact_portion .personal_information button {
+  width: 100%;
+  border-radius: 10px;
+  color: #579BF0;
+  border-color: #579BF0;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+.contact_portion .personal_information button:hover {
+  text-decoration: underline;
 }
 
 .Posts {
@@ -345,26 +402,50 @@ small {
 .Posts .post_text {
   padding: 10px 15px;
 }
+.Posts .post_text .d-flex {
+  align-items: center;
+  justify-content: space-between;
+}
 
 .posts_data .card p {
   text-transform: capitalize;
+  margin-bottom: 0px;
+}
+.posts_data .card p a {
+  text-decoration: none;
 }
 .posts_data .card .card_head {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-right: 15px;
 }
-.posts_data .card .card_head .post_header {
+.posts_data .card .card_head .img_ {
+  display: flex;
+}
+.posts_data .card .card_head .img_ .card_img_top {
+  width: 100%;
+  height: 180px;
+}
+.posts_data .card .card_head .img_ .post_header {
+  margin-bottom: 30px;
   margin-left: 8px;
 }
-.posts_data .card .card_head .post_header .card-title {
-  margin-bottom: 0px;
+.posts_data .card .card_head .img_ .post_header .container-fluid {
+  padding: 0px;
+}
+.posts_data .card .card_head .img_ .post_header .post_field {
+  display: flex;
+}
+.posts_data .card .card_head .img_ .post_header .card-title {
+  margin-bottom: 10px;
   text-transform: capitalize;
 }
 .posts_data .card .card_head .ellipsis {
+  position: absolute;
+  cursor: pointer;
   width: 25px;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -381,5 +462,130 @@ small {
 }
 .posts_data .card .card-img {
   height: auto;
+  max-height: 280px;
   width: 215px;
+}
+
+.show_text {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.post_dropdown {
+  background: white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  width: 110px;
+  position: absolute;
+  right: -20px;
+  z-index: 9999;
+  top: 30px;
+  border-radius: 10px;
+}
+.post_dropdown .edit_post {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0901960784);
+}
+.post_dropdown .edit_post .btn {
+  padding: 5px 20px;
+}
+.post_dropdown .edit_post .btn:hover {
+  color: #579BF0;
+}
+.post_dropdown .delete_post .btn {
+  padding: 5px 20px;
+}
+.post_dropdown .delete_post .btn:hover {
+  color: red;
+}
+
+@media screen and (max-width: 767px) {
+  .card_head .card-img {
+    height: auto;
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+  .card_head .card-title {
+    font-size: 16px;
+  }
+  .card_head p {
+    font-size: 12px;
+  }
+  .card_head small {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .posts_data .card .card_head .img_ {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+  .posts_data .card .card_head .img_ {
+    display: block !important;
+  }
+}
+.apply_Section .submitted {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.apply .profile img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  margin-right: 20px;
+}
+
+.contact_us {
+  position: relative;
+  top: 80px;
+  background-color: #ffffff;
+  width: 90%;
+  margin: auto;
+}
+.contact_us .contact_Form {
+  padding: 40px 60px;
+}
+.contact_us .contact_Form textarea {
+  max-height: 160px;
+}
+.contact_us .contact_Form h1 {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.892);
+  margin-bottom: 30px;
+}
+.contact_us .contact_Form button {
+  width: 100%;
+}
+
+.search_field {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin: 20px 0px;
+}
+.search_field input {
+  border-radius: 20px;
+  padding: 8px 40px 8px 15px;
+}
+.search_field .fa-search {
+  top: 0;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  background: lightgray;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 40px;
+}
+
+.noDataFound p {
+  color: red;
+  text-align: center;
+}
+.noDataFound p i {
+  color: red;
 }/*# sourceMappingURL=main.css.map */

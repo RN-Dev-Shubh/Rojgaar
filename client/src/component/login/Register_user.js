@@ -2,7 +2,9 @@ import Axios from 'axios';
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../landing/Header';
+// import Header from '../landing/Header';
+import logo from '../../assets/Images/rojgaar.png'
+
 
 const Register_user = () => {
 
@@ -17,7 +19,8 @@ const Register_user = () => {
     const [dob, setDob] = useState();
     const [pincode, setPincode] = useState();
     const [address, setAddress] = useState();
-
+    const [userType, setUserType] = useState();
+    
 
     const add_data=(e)=>{
         console.log("register");
@@ -33,11 +36,12 @@ const Register_user = () => {
                 dob:dob,
                 pincode:pincode,
                 address:address,
+                userType:userType,
                 profile_pic:"none"
             }).then((data) => {
                 alert(data.data)
                 if(data.data==="Registration Completed Successfully."){
-                    navigate("/login")
+                    navigate("/")
                 }
                 console.log(data.data);
             }).catch((err) => {
@@ -67,14 +71,15 @@ const Register_user = () => {
       console.log(dob);
   return (
     <div>
-        <Header/>
-        <div className="container-fluid form register">
+        {/* <Header/> */}
+        <div className="container-fluid register">
             <div className="row">
                 <div className="col-12 col-sm-12 col-md-4"></div>
-                <div className="col-12 col-sm-12 col-md-4">
-                    <div className="heading">
-                        <h3>Signup</h3>
-                    </div>  
+                <div className="col-12 col-sm-12 col-md-4 form">
+                    {/* <div className="heading"> */}
+                    <img className='landing_img' src={logo} alt="Rojgaar"/>
+                        {/* <h3>Signup</h3> */}
+                    {/* </div>   */}
                     <input type="text" className="form-control" name="name" placeholder="Enter username" onChange={(event) => { setName(event.target.value) }} value={name} required />
                     <input type="email" className="form-control" name="email" placeholder="Enter email" onChange={(event) => { setEmail(event.target.value) }} value={email} required />
                     <input type="tel" className="form-control" name="phone" placeholder="Enter phone no" maxLength={10} onChange={(event) => { setPhone(event.target.value) }} value={phone} required />
@@ -85,11 +90,18 @@ const Register_user = () => {
                         <i className={eyeicon} onClick={show_hide_password}></i>
                     </div>
                     <input type="date" className="form-control" name="dob" placeholder="Enter DOB" onChange={(event) => { setDob(event.target.value) }} value={dob} required />
+                    <select className="form-control"  name="UserType" id="" onClick={(e)=>{setUserType(e.target.value)
+                    console.log(e.target.value)}} required>
+                        <option value="">--Select user type--</option>
+                    <option value="businessman">Businessman</option>
+                    <option value="worker">Worker</option>
+                    </select>
                     <input type="text" className="form-control" name="pincode" maxLength={6} minLength={6} placeholder="Enter Pincode" onChange={(event) => { setPincode(event.target.value) }} value={pincode} required />
                     <textarea rows="3" className='form-control' name='address' type="text" placeholder='Address..' onChange={(event) => { setAddress(event.target.value) }} value={address}></textarea>
                     <div className="register_btn">
                         <button className="btn btn2" onClick={add_data}>Submit</button>
                     </div>
+                    <small className="signin_now">Have an account? <a href="/">Sign In Now</a></small>
                 </div>
             </div>
         </div> 

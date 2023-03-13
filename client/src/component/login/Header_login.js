@@ -1,38 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import user from '../../assets/Images/user.png'
+import user from "../../assets/Images/user.png";
 // import Home from "../Business/Home";
 // import Post_job from "../Business/Post_job";
 // import Profile from "../Business/Profile";
-import logo from '../../assets/Images/8_1_1_banner3Hindi-1.png';
-
+import logo from "../../assets/Images/8_1_1_banner3Hindi-1.png";
 
 const Header_login = () => {
-  const [profileimage, setProfileimage] = useState(user)
-  const getProfile = () =>{
+  const [profileimage, setProfileimage] = useState(user);
+  const getProfile = () => {
     let email = localStorage.getItem("user");
-    axios.get('http://localhost:9000/getProfile?email='+email).then((data) =>{
-      setProfileimage(data.data[0].profile_pic)
-    }).catch((err) =>{
-      console.log(err);
-    });
-  }
-  useEffect(()=>{
+    axios
+      .get("http://localhost:9000/getProfile?email=" + email)
+      .then((data) => {
+        setProfileimage(data.data[0].profile_pic);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
     getProfile();
-
-  },[])
-  const open_profile_dropdown=()=>{
-    setDisplay(!display)
-  }
+  }, []);
+  const open_profile_dropdown = () => {
+    setDisplay(!display);
+  };
   const [display, setDisplay] = useState(true);
   // const [postjob, setPostjob] = useState(false);
   // const [profile, setProfile] = useState(false);
   const navigate = useNavigate();
   const auth2 = localStorage.getItem("user");
-  const go_profile=()=>{
-    navigate("/profile")
-  }
+  const go_profile = () => {
+    setDisplay(!display);
+    navigate("/profile");
+  };
 
   // useEffect(() => {
   //   const auth = localStorage.getItem("user");
@@ -68,7 +70,7 @@ const Header_login = () => {
   return (
     <div>
       <div className="top bg-light text-dark">
-      <li>
+        <li>
           <Link to="">
             <i className="fa fa-facebook"></i>
           </Link>
@@ -85,20 +87,15 @@ const Header_login = () => {
         </li>
       </div>
       <nav className="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand">
-
-<ul>
-  <li>
-    <img
-      className="logo"
-      src={logo}
-      alt=""
-      />
-  </li>
-</ul>
-      </a>
+        <a className="navbar-brand">
+          <ul>
+            <li>
+              <img className="logo" src={logo} alt="logo" />
+            </li>
+          </ul>
+        </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -112,27 +109,40 @@ const Header_login = () => {
           className="header collapse navbar-collapse"
           id="navbarSupportedContent"
         >
-         
-          <ul class="navbar-nav">
-            <li class="nav-item">
+          <ul className="navbar-nav">
+            <li className="nav-item">
               <Link
                 aria-current="page"
-                to="/post_job "
+                to="/home "
                 className="nav-link"
                 // onClick={job_post}
               >
-                Post Jobs
+                Home
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="#">
+            {/* {user_type !== "worker" && (
+              <li className="nav-item">
+                <Link
+                  aria-current="page"
+                  to="/post_job "
+                  className="nav-link"
+                  // onClick={job_post}
+                >
+                  Post Jobs
+                </Link>
+              </li>
+            )} */}
+
+            <li className="nav-item">
+              <Link className="nav-link" to="#">
                 About
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link"
-               to="/contact_us" 
-              // onClick={profile_function}
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                to="/contact_us"
+                // onClick={profile_function}
               >
                 Contact us
               </Link>
@@ -145,46 +155,47 @@ const Header_login = () => {
             </button> */}
             {auth2 ? (
               <>
-              <Link
-                className="btn btn2"
-                
-                // onClick={() => logout() + console.log("hello")}
-                >
+                <Link
+                  className="btn btn2"
 
-                {/* <i className="fa fa-user"></i> */}
-                <img src={profileimage} alt=""  style={{fontSize:44,width:50}}/>
-              </Link>
-              <small className="profile_button"></small>
-             
-                </>
+                  // onClick={() => logout() + console.log("hello")}
+                >
+                  {/* <i className="fa fa-user"></i> */}
+                  <img
+                    src={profileimage}
+                    alt="profile"
+                    style={{ fontSize: 44, width: 50 }}
+                  />
+                </Link>
+                <small className="profile_button"></small>
+              </>
             ) : (
-              <Link className="btn btn2" to="/login">
+              <Link className="btn btn2" to="/">
                 <i className="fa fa-user"></i> Login
               </Link>
             )}
           </div>
         </div>
       </nav>
-      {/* {postjob ? 
-      <Post_job/>
-      :
-        (profile?
-        <Profile/>
-        :
-        <Post_job/>
-        )
-        
-} */}
-  <section className="profile_dropdown"  style={{display: display?'none':'block'}}>
-    <div className="view_profile">
-      <button className="btn" onClick={go_profile}>View Profile</button>
+      <section
+        className="profile_dropdown"
+        style={{ display: display ? "none" : "block" }}
+      >
+        <div className="view_profile">
+          <button className="btn" onClick={go_profile}>
+            View Profile
+          </button>
+        </div>
+        <div className="logout">
+          <button
+            className="btn"
+            onClick={() => logout() + console.log("hello")}
+          >
+            Logout
+          </button>
+        </div>
+      </section>
     </div>
-    <div className="logout">
-      <button className="btn" onClick={() => logout() + console.log("hello")}  >Logout</button>
-    </div>
-  </section>
-    </div>
-    
   );
 };
 

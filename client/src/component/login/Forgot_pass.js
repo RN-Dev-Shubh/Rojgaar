@@ -1,8 +1,10 @@
 import { useState } from "react"
 import React from 'react'
-import Header from "../landing/Header"
+// import Header from "../landing/Header"
 import Axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import logo from '../../assets/Images/rojgaar.png'
+
 const Forgot_pass = () => {
 const navigate = useNavigate()
 const [email, setEmail] = useState()
@@ -31,15 +33,19 @@ else {
 
   return (
     <div>
-        <Header/>
-        <div className="container-fluid form forgot_pass">
+        {/* <Header/> */}
+        <div className="container-fluid  forgot_pass">
             <div className="row">
                 <div className="col-12 col-sm-12 col-md-4"></div>
-                <div className="col-12 col-sm-12 col-md-4">
+                <div className="col-12 col-sm-12 col-md-4 form">
                     <div className="heading">
                         <h3>Forgot Password</h3>
+                        <img className='landing_img' src={logo} alt="Rojgaar"/>
                     </div>  
+                    <label><b>Enter Email</b></label>
                     <input type="email" className="form-control" name="email" placeholder="Enter email" onChange={(event) => { setEmail(event.target.value) }} value={email} required />
+                    
+                    <label><b>Enter DoB</b></label>
                     <input type="date" className="form-control" name="dob" placeholder="Enter DOB" onChange={(event) => { setDob(event.target.value) }} value={dob} required />
                     {/* <input type="password" className="form-control" name="password" placeholder="Enter password" onChange={(event) => { setPassword(event.target.value) }} value={password} required />
                     <div className="pass">

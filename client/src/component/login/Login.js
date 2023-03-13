@@ -1,8 +1,10 @@
+import '../../sass/main.css'
 import React from "react";
 import { useState } from "react";
 import Axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import Header from "../landing/Header";
+// import Header from "../landing/Header";
+import logo from '../../assets/Images/rojgaar.png'
 const Login = () => {
   const [type, setType] = useState("password");
   const [eyeicon, seteyeicon] = useState("fa fa-eye-slash");
@@ -26,11 +28,13 @@ const Login = () => {
             if(password===data.data[0].password){
               alert("you have successfully Login!")
               localStorage.setItem("user",email);
+              localStorage.setItem("user_type",data.data[0].user_type);
+              localStorage.setItem("id",data.data[0].id);
               navigate("/home") 
             }
             else{
               alert("Incorrect Password!")
-              navigate("/login")
+              navigate("/")
             }
         }).catch((err) => {
           // alert("Email does not exist")
@@ -63,16 +67,19 @@ const Login = () => {
 
   return (
     <div>
-      <Header/>
-      <div className="container-fluid form login">
+      {/* <Header/> */}
+      <div className="container-fluid login">
         <div className="row">
           <div className="col-12 col-sm-12 col-md-4"></div>
-          <div className="col-12 col-sm-12 col-md-4">
-            <div className="heading">
-              <h3>Login</h3>
-            </div>
+          <div className="col-12 col-sm-12 col-md-4 form">
+            {/* <div className="heading"> */}
+            <img className='landing_img' src={logo} alt="Rojgaar"/>
+              {/* <h3>Login</h3> */}
+            {/* </div> */}
+            <label><b>Enter Email</b></label>
             <input type="email" className="form-control" name="email" placeholder="Enter username" onChange={(event) => { setEmail(event.target.value) }} value={email} required />
             <div className="pass">
+            <label><b>Enter Password</b></label>
               <input type={type} className="form-control" name="password" placeholder="Enter password" onChange={(event) => { setPassword(event.target.value) }} value={password} required />
               <i className={eyeicon} onClick={show_hide_password}></i>
             </div>
@@ -80,7 +87,7 @@ const Login = () => {
             <div className="login_btn">
                 <button className="btn btn2" onClick={add_data}>Login</button>
             </div>
-            <small className="signup_now">Don't have an account? <a href="/signup">Signup Now</a></small>
+            <small className="signup_now">Don't have an account? <a href="/signup">Sign Up Now</a></small>
           </div>
         </div>
         <div className="col-12 col-sm-12 col-md-4"></div>

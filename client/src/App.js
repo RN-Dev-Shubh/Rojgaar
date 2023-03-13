@@ -3,24 +3,24 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import Landing from './component/landing/Landing';
+// import Landing from './component/landing/Landing';
 // import Header from "./component/landing/Header";
 import Login from "./component/login/Login"
 import Register_user from "./component/login/Register_user";
-import Home from "./component/Business/Home"
+import Home from "./component/Pages/Home"
 import Forgot_pass from "./component/login/Forgot_pass";
 import Update_pass from "./component/login/Update_pass";
-import Profile from "./component/Business/Profile";
-import Contact_us from "./component/Business/Contact_us";
-import Post_job_Form from "./component/Business/Post_job_Form";
+import Profile from "./component/Pages/Profile";
+import Contact_us from "./component/Pages/Contact_us";
+import Post_job_Form from "./component/Posts/PostJob";
 // import PrivateComponent from "./component/PrivateComponent";
 
 function App() {
   return (
     <>
    <Routes>
-    <Route index exact path="/" element={<Landing/>} />
-    <Route excat path="/login" element={<Login/>} />
+    {/* <Route index exact path="/" element={<Landing/>} /> */}
+    <Route excat path="/" element={<Login/>} />
     <Route excat path="/signup" element={<Register_user/>} />
     <Route excat path="/forgot_password" element={<Forgot_pass/>} />
     <Route excat path="/update_password" element={<Update_pass/>} />

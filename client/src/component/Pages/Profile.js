@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Header_login from "../login/Header_login";
-import profile_pic from "../../assets/Images/images.jpg";
+// import profile_pic from "../../assets/Images/images.jpg";
 import axios from "axios";
 import user from "../../assets/Images/user.png";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 // import Card from 'react-bootstrap/Card'
-import Posts from "./Posts";
+import Posts from "../Posts/Posts";
+import PostForm from "../Posts/PostForm";
 // import e from "express";
 const Profile = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [profileimage, setProfileimage] = useState(user);
   const [business_profile_pic, setBusiness_profile_pic] = useState();
   const [acc_creationDate, setAcc_creationDate] = useState("");
@@ -86,7 +87,9 @@ const Profile = () => {
   const acd_month = acd.getMonth();
   const acd_year = acd.getFullYear();
   const acc_creation_Date = acd_day+'/'+(acd_month+1)+'/'+ acd_year;
+  console.log(acc_creation_Date);
 
+  const user_type = localStorage.getItem("user_type");
 
   const update_profile = () => {
     if (name) {
@@ -119,19 +122,18 @@ const Profile = () => {
           <div className="row">
             <div className="profile_section">
               <div className="cover_photo">
-                <img src={business_profile_pic} alt="" />
+                <img src={business_profile_pic} alt="business profile" />
                 <input
-                  style={{ display: "none" }}
+                  hidden
                   ref={inputRef}
                   type="file"
                   onChange={handleFileChange}
                 />
-
                 <i className="fa fa-camera" onClick={handlebusinessprofile}></i>
               </div>
               <div className="bottom_section_coverphoto">
                 <div className="profile_pic_">
-                  <img src={profileimage} alt="" />
+                  <img src={profileimage} alt="profile" />
                   <i
                     className="fa fa-edit"
                     data-bs-toggle="modal"
@@ -139,26 +141,26 @@ const Profile = () => {
                   ></i>
 
                   <div
-                    class="modal fade"
+                    className="modal fade"
                     id="exampleModal"
                     tabindex="-1"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                   >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="exampleModalLabel">
                             Edit Profile
                           </h5>
                           <button
                             type="button"
-                            class="btn-close"
+                            className="btn-close"
                             data-bs-dismiss="modal"
                             aria-label="Close"
                           ></button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                           Name:
                           <input
                             type="text"
@@ -196,17 +198,17 @@ const Profile = () => {
                             onChange={handlebusinessprofile}
                           /> */}
                         </div>
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                           <button
                             type="button"
-                            class="btn btn-secondary"
+                            className="btn btn-secondary"
                             data-bs-dismiss="modal"
                           >
                             Close
                           </button>
                           <button
                             type="button"
-                            class="btn btn-primary"
+                            className="btn btn-primary"
                             onClick={update_profile}
                           >
                             Save changes
@@ -226,7 +228,7 @@ const Profile = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-5">
+            <div className="col-12 col-sm-12 col-md-5">
               <div className="contact_portion">
                 <h4>Personal Info :</h4>
                 <div className="personal_information">
@@ -244,10 +246,18 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-            <div className="col-7">
+            <div className="col-12 col-sm-12 col-md-7">
               <div className="Posts">
                 <div className="post_text">
+                  <div className="d-flex">
                   <h4>Posts</h4>
+                  {user_type !== "worker" &&
+                  <div>
+                  <i className="fa fa-plus-square"  data-bs-toggle="modal" data-bs-target="#postjob" aria-hidden="true"></i>
+                  <PostForm isEditing={false} currele={''}/>
+                  </div>
+}
+                  </div>
                 </div>
               </div>
 

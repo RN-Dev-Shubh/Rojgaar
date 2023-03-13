@@ -2,7 +2,8 @@ import Axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Header from '../landing/Header'
+// import Header from '../landing/Header'
+import logo from '../../assets/Images/rojgaar.png'
 
 const Update_pass = () => {
 
@@ -16,7 +17,7 @@ const Update_pass = () => {
             }).then((data)=>{
                 localStorage.clear();
                 alert("Password changed successfully!")
-                navigate("/login")
+                navigate("/")
             }).catch((err)=>{
                 console.log(err);
                 alert("Data not found!");
@@ -45,16 +46,22 @@ const Update_pass = () => {
 
   return (
     <div>
-        <Header/>
-        <div className="container-fluid form update_pass">
+        {/* <Header/> */}
+        <div className="container-fluid  update_pass">
             <div className="row">
                 <div className="col-12 col-sm-12 col-md-4"></div>
-                <div className="col-12 col-sm-12 col-md-4">
+                <div className="col-12 col-sm-12 col-md-4 form">
                     <div className="heading">
-                        <h3>Update Password</h3>
+                        {/* <h3>Update Password</h3> */}
+                    <img className='landing_img' src={logo} alt="Rojgaar"/>
+
                     </div>  
+            <label><b>Enter Password</b></label>
+
                     <input type="password" className="form-control" name="password" placeholder="Enter password" onChange={(event) => { setPassword(event.target.value) }} value={password} required />
                     <div className="pass">
+            <label><b>Enter Confirm Password</b></label>
+
                         <input type={type} className="form-control" name="cpassword" placeholder="Confirm password" onChange={(event) => { setCpassword(event.target.value) }} value={cpassword} required />
                         <i className={eyeicon} onClick={show_hide_password}></i>
                     </div>
